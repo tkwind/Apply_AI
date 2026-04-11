@@ -1,0 +1,17 @@
+{
+  "name": "job-application-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend for MERN job application tracker with AI parsing",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "cd backend && npm install && npm run build",
+    "start": "cd backend && npm start",
+    "dev": "cd backend && npm run dev"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": ["mern", "job-tracker", "ai", "express", "mongodb"],
+  "author": "Your Name",
+  "license": "MIT"
+}

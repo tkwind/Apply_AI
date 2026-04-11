@@ -1,0 +1,12 @@
+# Railway Configuration for Backend Deployment
+[build]
+builder = "NIXPACKS"
+
+[build.args]
+NODE_VERSION = "18"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/api/applications"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
