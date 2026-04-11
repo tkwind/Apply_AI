@@ -40,7 +40,7 @@ const App = () => {
   const [draft, setDraft] = useState<Partial<Application>>(initialDraft);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
-  const [parseLoading, setParseLoading] = useState(false);
+  const [, setParseLoading] = useState(false);
 
   const queryClient = useQueryClient();
 
