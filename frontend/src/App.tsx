@@ -40,6 +40,7 @@ const App = () => {
   const [draft, setDraft] = useState<Partial<Application>>(initialDraft);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
   const [parseError, setParseError] = useState<string | null>(null);
+  const [parseLoading, setParseLoading] = useState(false);
 
   const queryClient = useQueryClient();
 
@@ -132,7 +133,6 @@ const App = () => {
   };
 
   const handleSelectSuggestion = (text: string) => {
-    setNoteCopy(text);
     setDraft((prev) => ({
       ...prev,
       notes: prev.notes ? `${prev.notes}\n- ${text}` : `- ${text}`,
