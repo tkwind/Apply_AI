@@ -12,7 +12,7 @@ import {
   parseJobDescription,
   updateApplication,
 } from './api/applications';
-import { Application, ApplicationStatus, ParsedJob, ResumeSuggestion } from './types';
+import { Application, ApplicationStatus, ParsedJob } from './types';
 import { useAuth } from './hooks/useAuth';
 
 const statuses: ApplicationStatus[] = ['Applied', 'Phone Screen', 'Interview', 'Offer', 'Rejected'];
@@ -39,9 +39,7 @@ const App = () => {
   const [authLoading, setAuthLoading] = useState(false);
   const [draft, setDraft] = useState<Partial<Application>>(initialDraft);
   const [selectedApp, setSelectedApp] = useState<Application | null>(null);
-  const [parseLoading, setParseLoading] = useState(false);
   const [parseError, setParseError] = useState<string | null>(null);
-  const [noteCopy, setNoteCopy] = useState('');
 
   const queryClient = useQueryClient();
 
@@ -175,10 +173,10 @@ const App = () => {
                 <button
                   type="button"
                   onClick={handleCreateApplication}
-                  disabled={createMutation.isLoading}
+                  disabled={createMutation.isPending}
                   className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white hover:bg-slate-800 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {createMutation.isLoading ? 'Saving…' : 'Save application'}
+                  {createMutation.isPending ? 'Saving…' : 'Save application'}
                 </button>
               </div>
 
