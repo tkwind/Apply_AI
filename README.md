@@ -13,9 +13,8 @@ This repository contains a MERN-style job application tracker with AI-assisted p
 ## Deployment
 
 ### Live Demo
-```bash
-https://apply-ai-iota.vercel.app/
-```
+
+Try a Live Demo at: https://apply-ai-iota.vercel.app/
 
 ### Backend (Railway)
 1. Create a Railway account at https://railway.app
